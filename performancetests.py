@@ -26,12 +26,12 @@ if __name__ == '__main__':
     #recursive_test
     
     started_at = time.time()
-    for _ in range(75000): 
+    for _ in range(100000): 
         FloydRecursive.floyd_warshall_recursive(dist,0,0,0)
     
     recursive_time = time.time() - started_at
     
-    print('It took the recursive function {}s to complete 75000 runs'.format(round(recursive_time,2)))
+    print('It took the recursive function {}s to complete 100000 runs'.format(round(recursive_time,2)))
     
     dist = [] 
     for i in Graph:
@@ -42,16 +42,15 @@ if __name__ == '__main__':
     
     #iterative_test
     started_at = time.time()
-    for _ in range(75000):
-        FloydRecursive.floyd_warshall_recursive(dist,0,0,0)
+    for _ in range(100000):
+        FloydRecursive.floyd_warshall_iterative(dist)
     
     iterative_time = time.time() - started_at
     
     
     iterative_time = time.time() - started_at
-    
-    
-    print('It took the iterative function {}s to complete 75000 runs'.format(round(iterative_time, 2)))
+
+    print('It took the iterative function {}s to complete 100000 runs'.format(round(iterative_time, 2)))
     
     dist = [] 
     for i in Graph:
@@ -60,9 +59,3 @@ if __name__ == '__main__':
             new_i.append(j)
         dist.append(new_i)
         
-        
-        
-        
-        
-        
-    
